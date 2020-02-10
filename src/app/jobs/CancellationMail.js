@@ -3,11 +3,11 @@ import pt from 'date-fns/locale/pt';
 import Mail from '../../lib/Mail';
 
 class CancellationMail {
-  get Key() {
+  get key() {
     return 'CancellationMail';
   }
 
-  async Handle({ data }) {
+  async handle({ data }) {
     const { appointment } = data;
     await Mail.sendMail({
       to: `${appointment.provider.name} <${appointment.provider.email}>`,
